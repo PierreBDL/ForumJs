@@ -57,6 +57,9 @@ async function login() {
             messageDiv.textContent = "Connexion réussie";
             messageDiv.style.backgroundColor = "rgb(122, 216, 122)";
             messageDiv.style.color = "green";
+            localStorage.setItem("username", username);
+            localStorage.setItem("profilePhoto", "/Assets/Images/profil.jpg");
+            location.reload();
             return;
         } else if (data.message != "") {
             message.style.display = "flex";

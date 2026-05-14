@@ -91,3 +91,31 @@ nav a.active::after {
 #profil:hover {
     transform: scale(1.1);
 }
+
+#divLogin {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#divLogin a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--text);
+}
+
+#divLogin a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--text);
+    transition: width 0.3s ease-in-out;
+}
+
+#divLogin a:hover::after {
+    width: 100%;
+}

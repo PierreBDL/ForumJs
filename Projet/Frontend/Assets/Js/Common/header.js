@@ -31,41 +31,45 @@ const headerDom = document.createElement("header");
 
 const header = (pageName) => {
 
-    headerDom.innerHTML = "";
-    
-    // Logo
-    let logoLink = document.createElement("a");
-    logoLink.href = "/home";
-    let logo = document.createElement("img");
-    logo.src = "/Assets/Images/logo.png";
-    logo.alt = "Logo";
-    logo.id = "logo";
-    logoLink.appendChild(logo);
-    headerDom.appendChild(logoLink);
+  headerDom.innerHTML = "";
 
-    // Nav
-    let nav = document.createElement("nav");
+  // Logo
+  let logoLink = document.createElement("a");
+  logoLink.href = "/home";
+  let logo = document.createElement("img");
+  logo.src = "/Assets/Images/logo.png";
+  logo.alt = "Logo";
+  logo.id = "logo";
+  logoLink.appendChild(logo);
+  headerDom.appendChild(logoLink);
 
-    // Liens
-    let link = document.createElement("a");
-    link.href = "/home";
-    link.textContent = "Accueil";
-    if (link.textContent.toLocaleUpperCase() === pageName.toLocaleUpperCase()) {
-        link.classList.add("active");
-    }
-    nav.appendChild(link);
+  // Nav
+  let nav = document.createElement("nav");
 
+  // Liens
+  let link = document.createElement("a");
+  link.href = "/home";
+  link.textContent = "Accueil";
+  if (link.textContent.toLocaleUpperCase() === pageName.toLocaleUpperCase()) {
+    link.classList.add("active");
+  }
+  nav.appendChild(link);
+
+  if (localStorage.getItem("username") !== null) {
     let link2 = document.createElement("a");
     link2.href = "/discussions";
     link2.textContent = "Discussions";
     if (link2.textContent.toLocaleUpperCase() === pageName.toLocaleUpperCase()) {
-        link2.classList.add("active");
+      link2.classList.add("active");
     }
     nav.appendChild(link2);
+  }
 
-    // Nav dans header
-    headerDom.appendChild(nav);
+  // Nav dans header
+  headerDom.appendChild(nav);
 
+  // Se connecter ou profil
+  if (localStorage.getItem("username") !== null) {
     // Page profil
     let divProfil = document.createElement("div");
     divProfil.id = "divProfil";
@@ -83,9 +87,19 @@ const header = (pageName) => {
     profilLink.appendChild(profil);
     divProfil.appendChild(profilLink);
     headerDom.appendChild(divProfil);
+  } else {
+    // Page login
+    let divLogin = document.createElement("div");
+    divLogin.id = "divLogin";
+    let loginLink = document.createElement("a");
+    loginLink.href = "/login";
+    loginLink.textContent = "Se connecter";
+    divLogin.appendChild(loginLink);
+    headerDom.appendChild(divLogin);
+  }
 
-    // Header dans body
-    bodyDom.appendChild(headerDom);
+  // Header dans body
+  bodyDom.appendChild(headerDom);
 }
 
 const dataPage = document.body.getAttribute("data-page");
