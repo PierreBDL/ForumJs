@@ -2,6 +2,8 @@ const bodyDom = document.body;
 const headerDom = document.createElement("header");
 
 const header = (pageName) => {
+
+    headerDom.innerHTML = "";
     
     // Logo
     let logoLink = document.createElement("a");
@@ -40,7 +42,7 @@ const header = (pageName) => {
     let profilLink = document.createElement("a");
     profilLink.href = "/profil";
     let profil = document.createElement("img");
-    profil.src = "/Assets/Images/profil.jpg";
+    profil.src = localStorage.getItem("profilePhoto") || "/Assets/Images/profil.jpg";
     profil.alt = "Profil";
     profil.id = "profil";
     profilLink.appendChild(profil);
