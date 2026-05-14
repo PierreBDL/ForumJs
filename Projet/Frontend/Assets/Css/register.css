@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+    background-color: var(--bg);
+    font-family: "Space Grotesk", Inter, system-ui, sans-serif;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: auto;
+    height: 25px;
+    flex-shrink: 0;
+}
+
+#registerCard {
+    width: 100%;
+    max-width: 420px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow);
+}
+
+#registerHeader {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#registerHeader h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.3px;
+}
+
+#registerHeader p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.35rem;
+}
+
+#registerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.fieldGroup label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 0.85rem;
+    width: 17px;
+    height: 17px;
+    color: var(--text-muted);
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+.inputWrapper input {
+    width: 100%;
+    padding: 0.72rem 0.9rem 0.72rem 2.6rem;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.inputWrapper input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+.inputWrapper input:focus {
+    border-color: var(--primary);
+    background: var(--neutral);
+}
+
+.toggleBtn {
+    position: absolute;
+    right: 0.85rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.toggleBtn svg {
+    width: 17px;
+    height: 17px;
+}
+
+.toggleBtn:hover {
+    color: var(--text);
+}
+
+#strengthBar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 99px;
+    overflow: hidden;
+    margin-top: 0.35rem;
+}
+
+#strengthFill {
+    height: 100%;
+    width: 0%;
+    border-radius: 99px;
+    transition: all 0.3s ease;
+}
+
+#message {
+    display: none;
+    height: 50px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f3a2a2;
+    border-radius: 15px;
+    padding: 10px 30px;
+}
+
+#submitBtn {
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+}
+
+#submitBtn svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+}
+
+#submitBtn:hover {
+    background: var(--tertiary);
+    transform: translateY(-1px);
+}
+
+#submitBtn:hover svg {
+    transform: translateX(3px);
+}
+
+#submitBtn:active {
+    transform: translateY(0);
+}
+
+#submitBtn:disabled {
+    cursor: default;
+    transform: none;
+}
+
+#loginLink {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+#loginLink a {
+    color: var(--tertiary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+#loginLink a:hover {
+    color: var(--text);
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+
+    #registerCard {
+        padding: 2rem 1.25rem;
+    }
+}
