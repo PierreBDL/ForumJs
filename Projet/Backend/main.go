@@ -1,15 +1,18 @@
 package main
 
 import (
-	"html/template"
+	"forum-backend/Server/Frontend"
 	"net/http"
 )
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		tmpl := template.Must(template.ParseFiles("../Frontend/Templates/index.html"))
-		tmpl.Execute(w, nil)
-	})
+	// Routes
+	http.HandleFunc("/", Frontend.DisplayPages)
+	http.HandleFunc("/home", Frontend.DisplayPages)
+	http.HandleFunc("/discussions", Frontend.DisplayPages)
+	http.HandleFunc("/profil", Frontend.DisplayPages)
+	http.HandleFunc("/connexion", Frontend.DisplayPages)
+	http.HandleFunc("/inscription", Frontend.DisplayPages)
 
 	// Static files
 	http.Handle("/Assets/", http.StripPrefix("/Assets/", http.FileServer(http.Dir("../Frontend/Assets"))))
