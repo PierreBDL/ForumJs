@@ -72,6 +72,15 @@ nav a.active::after {
     transition: width 0.3s ease-in-out;
 }
 
+#divProfil {
+    max-width: 150px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px
+}
+
 #profil {
     width: auto;
     height: 40px;
