@@ -1,3 +1,31 @@
+// Fonctions pour la profilPhoto
+
+// Load
+function applySavedData() {
+  let savedUsername = localStorage.getItem("username");
+  let savedProfilePhoto = localStorage.getItem("profilePhoto");
+
+  if (savedUsername) {
+    document.getElementById("pseudoProfil").textContent = savedUsername;
+  }
+
+  if (savedProfilePhoto) {
+    // If it's a temp link, we load default image
+    if (savedProfilePhoto.startsWith('blob:')) {
+      localStorage.removeItem("profilePhoto");
+    } else {
+      let profileImg = document.getElementById("profilPhoto");
+      if (profileImg) {
+        profileImg.src = savedProfilePhoto;
+      }
+    }
+  }
+}
+
+
+
+// Header
+
 const bodyDom = document.body;
 const headerDom = document.createElement("header");
 
@@ -39,6 +67,13 @@ const header = (pageName) => {
     headerDom.appendChild(nav);
 
     // Page profil
+    let divProfil = document.createElement("div");
+    divProfil.id = "divProfil";
+    let username = document.createElement("p");
+    username.id = "pseudoProfil";
+    username.textContent = localStorage.getItem("username") || "TestUser";
+    divProfil.appendChild(username);
+    // Profil
     let profilLink = document.createElement("a");
     profilLink.href = "/profil";
     let profil = document.createElement("img");
@@ -46,7 +81,8 @@ const header = (pageName) => {
     profil.alt = "Profil";
     profil.id = "profil";
     profilLink.appendChild(profil);
-    headerDom.appendChild(profilLink);
+    divProfil.appendChild(profilLink);
+    headerDom.appendChild(divProfil);
 
     // Header dans body
     bodyDom.appendChild(headerDom);
