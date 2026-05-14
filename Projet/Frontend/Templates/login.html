@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="/Assets/Css/Common/header.css">
+    <link rel="stylesheet" href="/Assets/Css/Common/footer.css">
+    <script src="/Assets/Js/Common/header.js" defer></script>
+    <script src="/Assets/Js/Common/footer.js" defer></script>
+    <link rel="stylesheet" href="/Assets/Css/Common/theme.css">
+    <link rel="stylesheet" href="/Assets/Css/register.css">
+    <script src="/Assets/Js/login.js" defer></script>
+</head>
+
+<body data-page="Inscription">
+    <main>
+        <div id="registerCard">
+            <div id="registerHeader">
+                <h1>Se connecter</h1>
+                <p>Rejoins la communauté du forum</p>
+            </div>
+
+            <form id="registerForm" action="" method="POST">
+
+                <div class="fieldGroup">
+                    <label for="username">Nom d'utilisateur</label>
+                    <div class="inputWrapper">
+                        <img src="/Assets/Images/Register/user.svg" alt="">
+                        <input type="text" id="username" name="username" placeholder="ex: JohnDoe42" autocomplete="username" required>
+                    </div>
+                    <span class="fieldError" id="usernameError"></span>
+                </div>
+
+                <div class="fieldGroup">
+                    <label for="password">Mot de passe</label>
+                    <div class="inputWrapper">
+                        <img src="/Assets/Images/Register/password.svg" alt="">
+                        <input type="password" id="password" name="password" placeholder="8 caractères minimum" autocomplete="new-password" required>
+                        <button type="button" id="togglePassword" class="toggleBtn" aria-label="Afficher le mot de passe">
+                            <img src="/Assets/Images/Register/togglePassword.svg" alt="">
+                        </button>
+                    </div>
+                    <div id="strengthBar">
+                        <div id="strengthFill"></div>
+                    </div>
+                    <span class="fieldError" id="passwordError"></span>
+                </div>
+
+                <div id="message"></div>
+
+                <button type="button" id="submitBtn">
+                    <span>Se connecter</span>
+                </button>
+
+            </form>
+
+            <p id="loginLink">Pas encore inscrit ? <a href="/register">Créer un compte</a></p>
+        </div>
+    </main>
+</body>
+
+</html>

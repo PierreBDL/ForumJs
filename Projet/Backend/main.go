@@ -15,6 +15,7 @@ func main() {
 	http.HandleFunc("/profil", Frontend.DisplayPages)
 	http.HandleFunc("/connexion", Frontend.DisplayPages)
 	http.HandleFunc("/register", Frontend.DisplayPages)
+	http.HandleFunc("/login", Frontend.DisplayPages)
 
 	// Static files
 	http.Handle("/Assets/", http.StripPrefix("/Assets/", http.FileServer(http.Dir("../Frontend/Assets"))))
@@ -23,6 +24,7 @@ func main() {
 	Database.InitDB()
 
 	http.HandleFunc("/api/register", Api.RegisterHandler)
+	http.HandleFunc("/api/login", Api.LoginHandler)
 
 	http.ListenAndServe(":8080", nil)
 
