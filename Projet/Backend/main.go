@@ -26,6 +26,7 @@ func main() {
 	http.HandleFunc("/api/register", Api.RegisterHandler)
 	http.HandleFunc("/api/login", Api.LoginHandler)
 	http.HandleFunc("/api/profil", Api.ProfilHandler)
+	http.HandleFunc("/api/editProfile", Api.EditProfilHandler)
 
 	http.ListenAndServe(":8080", nil)
 
