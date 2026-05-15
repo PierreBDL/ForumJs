@@ -9,6 +9,7 @@ const profil = {
     id: "12345",
     created_at: "2026-01-15T10:00:00Z",
     online: true,
+    lastConnexion: "Il y a 1 heure",
     post_count: 5,
     comment_count: 12,
     like_count: 8,
@@ -37,6 +38,51 @@ const profil = {
         },
     }
 };
+
+// Get informations from server with username
+async function getProfil() {
+    const username = localStorage.getItem("username");
+
+    try {
+        let result = await fetch("/api/profil?username=" + username, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        let data = await result.json();
+
+        if (result.status === 200) {
+            profil.username = data.username;
+            profil.avatar_url = data.avatarLink;
+            profil.role = data.role;
+            profil.id = data.id;
+            profil.created_at = data.createAt;
+            profil.online = data.isOnline;
+            profil.post_count = data.post_count;
+            profil.comment_count = data.comment_count;
+            profil.like_count = data.like_count;
+            profil.dislike_count = data.dislike_count;
+            profil.email = data.email;
+            profil.lastPosts = data.lastPosts;
+
+            // Si en ligne -> dernière connexion = maintenant
+            if (profil.online === 1 || profil.online === true) {
+                profil.lastConnexion = "Actuellement en ligne"
+            } else {
+                profil.lastConnexion = data.lastConnexion;
+            }
+
+            printInfos(profil);
+            printLastPosts();
+        } else if (data.message != "") {
+            console.log(data.message);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 
 // Print lastPosts
@@ -85,7 +131,7 @@ function printInfos(profile) {
     // Online
     const onlineBall = document.getElementById("isOnlineBall");
     const onlineText = document.getElementById("isOnline");
-    if (profile.online) {
+    if (profile.online === 1 || profile.online === true) {
         onlineBall.classList.add("Online");
         onlineBall.classList.remove("Offline");
         onlineText.textContent = "Online";
@@ -97,13 +143,15 @@ function printInfos(profile) {
         onlineText.style.color = "red";
     }
 
+    // Last connexion
+    document.getElementById("lastVisit").textContent = profile.lastConnexion;
 
     // Role
     document.getElementById("userRole").textContent = profile.role || "User";
 
     // Date
     const creationDateDom = document.getElementById("creationDate");
-    let createdDate = new Date(profile.created_at).toLocaleDateString();
+    const createdDate = new Date(profile.created_at).toLocaleDateString();
     creationDateDom.textContent = createdDate;
 
     // Connexion Service
@@ -260,4 +308,5 @@ function applySavedData() {
 }
 
 applySavedData();
-printInfos(profil);
+getProfil();
+if (devMode) printInfos(profil);

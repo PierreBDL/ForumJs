@@ -50,7 +50,9 @@ async function register() {
                 username: username,
                 email: email,
                 password: password,
-                avatar: "/Assets/Images/profil.jpg"
+                avatar: "/Assets/Images/profil.jpg",
+                createAt: new Date().toISOString(),
+                lastConnexion: new Date().toISOString(),
             })
         });
 

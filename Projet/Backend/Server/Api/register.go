@@ -63,6 +63,9 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 	newUser := dataFromJS.ToUser()
 	newUser.Password = hashedPassword
 
+	// Mettre l'heure js
+	newUser.LastConnexion = dataFromJS.LastConnexion
+
 	result := Database.DB.Create(&newUser)
 	if result.Error != nil {
 		http.Error(w, "Erreur lors de la création", http.StatusInternalServerError)
