@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,30 @@
     <link rel="stylesheet" href="/Assets/Css/Common/footer.css">
     <script src="/Assets/Js/Common/header.js" defer></script>
     <script src="/Assets/Js/Common/footer.js" defer></script>
+    <script src="/Assets/Js/index.js"></script>
 </head>
+
 <body data-page="Accueil">
     <main>
-        <a href="/register">S'inscrire</a>
+        <div id="feedContainer">
+
+            <div class="card">
+                <div class="headerPost">
+                    <span class="postAuthor">@Lucas</span>
+                    <h3 class="postTitle">Développer un routeur en Go sans framework</h3>
+                </div>
+                <div class="contentPost">
+                    <p class="postContent">C'est fou à quel point le package net/http de Go est puissant. Pas besoin de
+                        Gin ou de Fiber pour faire une API REST propre et performante...</p>
+                </div>
+                <div class="footerPost">
+                    <span class="postDate">15 mai 2026</span>
+                    <button class="view-btn">Voir le post</button>
+                </div>
+            </div>
+
+        </div>
     </main>
 </body>
+
 </html>

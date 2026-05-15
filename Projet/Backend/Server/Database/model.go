@@ -22,8 +22,14 @@ type User struct {
 
 type Post struct {
 	gorm.Model
-	Title   string `gorm:"not null"`
-	Content string `gorm:"not null"`
-	UserID  uint   `gorm:"not null"`
-	User    User   `gorm:"foreignKey:UserID"`
+	Title      string `gorm:"not null"`
+	Content    string `gorm:"not null"`
+	Likes      int    `gorm:"default:0"`
+	Dislikes   int    `gorm:"default:0"`
+	Comments   int    `gorm:"default:0"`
+	Views      int    `gorm:"default:0"`
+	Created_at string `gorm:"default:CURRENT_TIMESTAMP"`
+	Updated_at string `gorm:"default:CURRENT_TIMESTAMP"`
+	UserID     uint   `gorm:"not null"`
+	User       User   `gorm:"foreignKey:UserID"`
 }
