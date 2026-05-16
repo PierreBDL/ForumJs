@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil visit</title>
+    <link rel="stylesheet" href="/Assets/Css/index.css">
+    <link rel="stylesheet" href="/Assets/Css/Common/theme.css">
+    <link rel="stylesheet" href="/Assets/Css/Common/header.css">
+    <link rel="stylesheet" href="/Assets/Css/Common/footer.css">
+    <script src="/Assets/Js/Common/header.js" defer></script>
+    <script src="/Assets/Js/Common/footer.js" defer></script>
+    <link rel="stylesheet" href="/Assets/Css/profilVisit.css">
+    <script src="/Assets/Js/profilVisit.js" defer></script>
+</head>
+<body data-page="Profile">
+    <main>
+        <div id="profileHead">
+            <img src="/Assets/Images/profile/banner.jpg" alt="Banner" id="banner">
+            <span id="profilePhotoName">
+                <img src="/Assets/Images/profile/photo.jpg" alt="Profile Photo" id="profilPhoto">
+                <span id="isOnlineBall"></span>
+                <div id="photoName">
+                    <div class="editableField">
+                        <h4 id="pseudoProfil">Nom</h4>
+                    </div>
+                </div>
+            </span>
+        </div>
+
+        <div id="profileContent">
+            <div id="left">
+                <div id="infos">
+                    <div class="titleOfBlock">
+                        <p>Informations</p>
+                    </div>
+
+                    <div class="infosPart">
+                        <p class="infosName">Role</p>
+                        <p class="infosValue" id="userRole">Utilisateur</p>
+                    </div>
+
+                    <div class="infosPart">
+                        <p class="infosName">Status</p>
+                        <p class="infosValue" id="isOnline">En ligne</p>
+                    </div>
+
+                    <div class="infosPart">
+                        <p class="infosName">Date d'inscription</p>
+                        <p class="infosValue" id="creationDate">23 Mars 2019</p>
+                    </div>
+
+                    <div class="infosPart">
+                        <p class="infosName">Dernière connexion</p>
+                        <p class="infosValue" id="lastVisit">Il y a 1 minute</p>
+                    </div>
+
+                    <div class="infosPart">
+                        <p class="infosName" id="infosNameEmail">Courriel</p>
+                        <div class="infosValue connexionServiceDiv">
+                            <p id="connexionService">exemple@exemple.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="center">
+                <div id="statistiques">
+                    <div class="titleOfBlock">
+                        <p>Statistiques</p>
+                    </div>
+
+                    <div id="statsContent">
+                        <div class="statsPart">
+                            <p class="statsValue" id="statsPosts">122</p>
+                            <p class="statsName">Posts</p>
+                        </div>
+
+                        <div class="statsPart">
+                            <p class="statsValue" id="statsDislikesGiver">11</p>
+                            <p class="statsName">Post détestés</p>
+                        </div>
+
+                        <div class="statsPart">
+                            <p class="statsValue" id="statsLikesGiven">4</p>
+                            <p class="statsName">Posts aimés</p>
+                        </div>
+
+                        <div class="statsPart">
+                            <p class="statsValue" id="statsComments">5</p>
+                            <p class="statsName">Commentaires</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="posts">
+
+                    <div class="titleOfBlock">
+                        <p>Derniers Posts</p>
+                    </div>
+
+                    <div id="postContent">
+                        <div class="cardPost" id="Post1">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

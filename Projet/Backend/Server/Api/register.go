@@ -5,6 +5,7 @@ import (
 	"forum-backend/Server/Database"
 	"forum-backend/Server/Tools"
 	"net/http"
+	"time"
 )
 
 func RegisterHandler(w http.ResponseWriter, r *http.Request) {
@@ -64,7 +65,7 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 	newUser.Password = hashedPassword
 
 	// Mettre l'heure js
-	newUser.LastConnexion = dataFromJS.LastConnexion
+	newUser.LastConnexion = time.Now()
 
 	result := Database.DB.Create(&newUser)
 	if result.Error != nil {

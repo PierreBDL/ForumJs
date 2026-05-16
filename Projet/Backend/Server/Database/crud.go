@@ -45,13 +45,13 @@ func (u *User) ToProfil() Profil {
 		Email:          u.Email,
 		AvatarLink:     u.AvatarLink,
 		Role:           u.Role,
-		LastConnexion:  u.LastConnexion,
+		LastConnexion:  u.LastConnexion.Format("2006-01-02 15:04:05"),
 		PostsLiked:     u.PostsLiked,
 		PostsDisliked:  u.PostsDisliked,
 		PostsCreated:   u.PostsCreated,
 		PostsCommented: u.PostsCommented,
 		IsOnline:       u.Is_online,
-		CreateAt:       u.Created_at,
+		CreateAt:       u.CreatedAt.Format("2006-01-02"),
 	}
 }
 

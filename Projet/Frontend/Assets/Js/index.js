@@ -34,7 +34,7 @@ function displayPosts(posts) {
         container.innerHTML += `
             <div class="card">
                 <div class="headerPost">
-                    <span class="postAuthor">@` + authorName + `</span>
+                    <span class="postAuthor">@<a href="/profilVisit?username=` + authorName + `">` + authorName + `</a><span>
                     <h3 class="postTitle">` + post.Title + `</h3>
                 </div>
                 <div class="contentPost">

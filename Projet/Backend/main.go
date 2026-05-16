@@ -24,6 +24,7 @@ func main() {
 	http.HandleFunc("/connexion", Frontend.DisplayPages)
 	http.HandleFunc("/register", Frontend.DisplayPages)
 	http.HandleFunc("/login", Frontend.DisplayPages)
+	http.HandleFunc("/profilVisit", Frontend.DisplayPages)
 
 	// Static files
 	http.Handle("/Assets/", http.StripPrefix("/Assets/", http.FileServer(http.Dir("../Frontend/Assets"))))

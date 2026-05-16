@@ -28,6 +28,9 @@ func DisplayPages(w http.ResponseWriter, r *http.Request) {
 	case "/login":
 		tmpl := template.Must(template.ParseFiles("../Frontend/Templates/login.html"))
 		tmpl.Execute(w, nil)
+	case "/profilVisit":
+		tmpl := template.Must(template.ParseFiles("../Frontend/Templates/profilVisit.html"))
+		tmpl.Execute(w, nil)
 	default:
 		http.NotFound(w, r)
 	}

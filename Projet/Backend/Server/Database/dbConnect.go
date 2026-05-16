@@ -31,11 +31,16 @@ func fillDB() {
 
 	if count == 0 {
 		testUser := User{
-			Username:   "Lucas_Dev",
-			Email:      "lucas@test.com",
-			Password:   "testtest",
-			AvatarLink: "/Assets/Images/profil.jpg",
-			Role:       "Admin",
+			Username:       "Lucas_Dev",
+			Email:          "lucas@test.com",
+			Password:       "testtest",
+			AvatarLink:     "/Assets/Images/profil.jpg",
+			Role:           "Admin",
+			PostsLiked:     5,
+			PostsDisliked:  7,
+			PostsCreated:   2,
+			PostsCommented: 10,
+			Is_online:      true,
 		}
 		DB.Create(&testUser)
 

@@ -55,6 +55,17 @@ main {
     font-weight: 500;
 }
 
+.postAuthor a {
+    color: var(--tertiary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.postAuthor a:hover {
+    color: var(--primary);
+}
+
 .postTitle {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.3rem;
